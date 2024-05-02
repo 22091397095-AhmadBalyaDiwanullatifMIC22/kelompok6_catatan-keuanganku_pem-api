@@ -1,0 +1,283 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Pengeluaran API",
+    "description": "API for managing expenses data",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost"
+    }
+  ],
+  "paths": {
+    "/pengeluaran": {
+      "post": {
+        "summary": "Add a new expense",
+        "requestBody": {
+          "description": "Expense data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tanggal": {
+                    "type": "string",
+                    "description": "Expense date"
+                  },
+                  "keterangan": {
+                    "type": "string",
+                    "description": "Description of the expense"
+                  },
+                  "keperluan": {
+                    "type": "string",
+                    "description": "Purpose of the expense"
+                  },
+                  "jumlah": {
+                    "type": "number",
+                    "description": "Amount of the expense"
+                  },
+                  "username": {
+                    "type": "string",
+                    "description": "Username of the owner"
+                  }
+                },
+                "required": ["tanggal", "keterangan", "keperluan", "jumlah", "username"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all expenses",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "Expense ID"
+                      },
+                      "tanggal": {
+                        "type": "string",
+                        "description": "Expense date"
+                      },
+                      "keterangan": {
+                        "type": "string",
+                        "description": "Description of the expense"
+                      },
+                      "keperluan": {
+                        "type": "string",
+                        "description": "Purpose of the expense"
+                      },
+                      "jumlah": {
+                        "type": "number",
+                        "description": "Amount of the expense"
+                      },
+                      "username": {
+                        "type": "string",
+                        "description": "Username of the owner"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pengeluaran/{id}": {
+      "put": {
+        "summary": "Update an expense",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the expense to update"
+          }
+        ],
+        "requestBody": {
+          "description": "Updated expense data",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "tanggal": {
+                    "type": "string",
+                    "description": "Expense date"
+                  },
+                  "keterangan": {
+                    "type": "string",
+                    "description": "Description of the expense"
+                  },
+                  "keperluan": {
+                    "type": "string",
+                    "description": "Purpose of the expense"
+                  },
+                  "jumlah": {
+                    "type": "number",
+                    "description": "Amount of the expense"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an expense",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "description": "ID of the expense to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "Success message"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "description": "Status of the request"
+                    },
+                    "error": {
+                      "type": "string",
+                      "description": "Error message"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
