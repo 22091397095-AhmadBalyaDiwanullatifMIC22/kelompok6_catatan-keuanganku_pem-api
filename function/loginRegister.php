@@ -2,7 +2,7 @@
 // session_start();
 // ob_start();
 
-$koneksi = mysqli_connect('localhost', 'root', '', 'db_catatanpengeluaran');
+$koneksi = mysqli_connect('localhost', 'root', '', 'catatan_keuangan');
 
 function acak($panjang)
 {

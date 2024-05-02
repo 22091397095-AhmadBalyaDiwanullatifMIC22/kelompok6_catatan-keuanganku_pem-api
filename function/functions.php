@@ -1,5 +1,5 @@
 <?php 
-    $koneksi = mysqli_connect('localhost', 'root', '', 'db_catatanpengeluaran');
+    $koneksi = mysqli_connect('localhost', 'root', '', 'catatan_keuangan');
     if (mysqli_connect_error() == true) {
         die('Gagal terhubung ke database');
         return false;
