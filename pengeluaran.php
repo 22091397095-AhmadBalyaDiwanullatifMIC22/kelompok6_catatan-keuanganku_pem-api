@@ -161,17 +161,6 @@
                         </div>
                     </li>
                 </a>
-                <!-- Input -->
-
-                <!-- laporan -->
-                <a href="laporan" style="text-decoration: none;">
-                    <li>
-                        <div>
-                            <span><i class="fas fa-clipboard-list"></i></span>
-                            <span>Laporan</span>
-                        </div>
-                    </li>
-                </a>
 
                 <!-- change icon -->
                 <script>
@@ -278,11 +267,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary btn2" data-toggle="modal" data-target="#exampleModalCenter">
-                        <i class=" fas fa-hand-holding-usd"></i> Tambah Data
-                    </button>
                 </div>
             </div>
         </div>
