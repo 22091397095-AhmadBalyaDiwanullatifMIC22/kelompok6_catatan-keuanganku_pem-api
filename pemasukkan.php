@@ -104,7 +104,7 @@
 					<a href="dashboard" style="text-decoration: none;">
 						<li>
 							<div>
-									<span class="fas fa-tachometer-alt"></span>
+							<span class="fas fa-home"></span>
 									<span>Dashboard</span>
 							</div>
 						</li>
