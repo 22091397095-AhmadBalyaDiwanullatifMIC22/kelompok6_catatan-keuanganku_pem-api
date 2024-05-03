@@ -102,7 +102,7 @@
                     <li>
                         <div>
                         <span class="fas fa-home"></span>
-                            <span>Dashboard</span>
+                            <span>Beranda</span>
                         </div>
                     </li>
                 </a>
